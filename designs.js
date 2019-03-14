@@ -4,6 +4,7 @@ sizePicker.addEventListener('submit', function (event) {
     event.preventDefault();
     makeGrid();
 });
+
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
     var inputHeight = document.getElementById('inputHeight').value;//get the height value given by the user
@@ -18,10 +19,11 @@ function makeGrid() {
             row.appendChild(column);  // insert new element column in the table
         }
     }
-};
+}
 
 // Select color input
-pixelCanvas.addEventListener('click', function(e) {
-    let color = document.getElementById('colorPicker').value;// get the color that the user has selected
-    e.target.style.backgroundColor = color; // paint the cell with the color
+pixelCanvas.addEventListener('mousedown', function(e) {
+    let color = document.getElementById('colorPicker').value;// get the color that the user has selected. i use let so that the color changes everytime the user choose a new one.
+        e.target.style.backgroundColor = color; // paint the cell with the color
+    
 });
